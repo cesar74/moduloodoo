@@ -1,0 +1,15 @@
+<odoo>
+  <data>  <!--Escribimos un registro o record por cada rol que haya-->
+    <!--id es lo importante, creamos un grupo pues res.groups-->
+    <record id="libreria_manager" model="res.groups"> 
+    <!--Defino Nombre de este grupo, indica lo que va a hacer-->
+     <field name="name">Libreria / Responsable</field>
+    </record>  
+        <record id="libreria_editor" model="res.groups"> 
+        <field name="name">Libreria / Editor</field>
+    </record>  
+    <record id="libreria_user" model="res.groups"> 
+        <field name="name">Libreria / Usuario</field>
+    </record>
+  </data>
+</odoo>

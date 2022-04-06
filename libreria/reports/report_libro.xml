@@ -1,0 +1,38 @@
+<odoo>
+<data>
+
+<!--Bloque 1 Definición del informe-->
+    <report
+    id="libreria.report_libro"            
+    model="libreria.libro"               
+    string="Informe libro"               
+    name="libreria.report_libro_view"    
+    file="libreria.report_libro_view"    
+    report_type="qweb-pdf"/>              
+  <!--Bloque 2 Template -->
+    <template id="report_libro_view"> <!--Debe coincidir con el campo name -->
+        <t t-call="web.html_container"> <!--contenedor, es la hoja general-->
+          <t t-foreach="docs" t-as="libro"> <!--Iteramos por cada uno de los libros que hubiera -->
+                                             <!--en la variable libro --> 
+            <t t-call="web.external_layout"><!--Muestra la cabecera del informe, tu loo etc.-->
+              <div class="page"> <!--Indica que es la página, dentro puedo meter los campos elegidos-->
+                <h2 t-field="libro.name"/> <!--Titulo en grande "@t"--> 
+                  <div> <!--Se maqueta como htmil normal --> 
+                    <strong>Precio:</strong> <!--Añado en negrita el precio--> 
+                    <span t-field="libro.precio"/> <!--t-field para mostrar un campo de bd Odoo--> 
+                  </div>
+                  <div>
+                    <strong>Ejemplares:</strong>
+                    <span t-field="libro.ejemplares"/>
+                  </div>
+                  <div>
+                    <strong>Categoría:</strong>
+                    <span t-field="libro.categoria"/>
+                  </div>
+              </div>
+            </t>
+          </t>
+        </t>
+      </template>
+</data>
+</odoo>

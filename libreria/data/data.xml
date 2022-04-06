@@ -1,0 +1,19 @@
+<odoo>
+ <data>
+    <!--intro. un registro por cada fila-->
+    <!--a meter en las tablas-->
+   <record model="libreria.categoria" >
+    <!--Solo meto un campo pero añadiendo -->
+    <!--otra fila a field añado otro dato al campo -->
+    <field name="name">Historica</field>
+   </record> 
+    <!--Segundo registro-->
+   <record model="libreria.categoria" >
+    <field name="name">Aventuras</field>
+   </record>
+ </data>
+</odoo>
+
+        <!--     <field name="name">Object 0</field> -->
+        <!--     <field name="value">0</field> -->
+        <!--   </record> -->
